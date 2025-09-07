@@ -20,7 +20,7 @@ func String(l int) string {
 	if n > MaxStringLen {
 		n = MaxStringLen
 	}
-	n /= 2
+	n >>= 1
 	return fmt.Sprintf("%x", Bytes(n))
 }
 
@@ -35,7 +35,7 @@ func SecureString(l int) (string, error) {
 	if n > MaxStringLen {
 		n = MaxStringLen
 	}
-	n /= 2
+	n >>= 1
 	b, err := SecureBytes(n)
 	if err != nil {
 		return "", err
